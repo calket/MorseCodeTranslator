@@ -3,6 +3,7 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 public class Controller {
     public TextField input;
@@ -19,10 +20,13 @@ public class Controller {
             ".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
 
     @FXML
-    private void handleTransButton(){
+    private void handleTransCodeButton(){
         decoded = "";
         String code = input.getText() + " ";
         dissection(code);
+    }
+
+    public void handleTransTextButton() {
     }
 
     private void dissection(String code) {
@@ -56,5 +60,4 @@ public class Controller {
         lblmorseTranslation.setText(decoded);
         lblTwo.setVisible(true);
     }
-
 }

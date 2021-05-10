@@ -12,7 +12,7 @@
          <Font name="SansSerif Regular" size="13.0" />
       </font>
     </Label>
-   <TextField fx:id="input" layoutX="20.0" layoutY="54.0" prefHeight="26.0" prefWidth="483.0">
+   <TextField fx:id="inputMorseCode" layoutX="20.0" layoutY="54.0" prefHeight="26.0" prefWidth="483.0">
       <font>
          <Font name="SansSerif Regular" size="13.0" />
       </font>
@@ -27,9 +27,26 @@
          <Font name="SansSerif Regular" size="13.0" />
       </font>
    </Label>
-   <Button fx:id="btnTrans" layoutX="515.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#handleTransButton" text="Translate">
+   <Button fx:id="btnTransMorse" layoutX="515.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#handleTransCodeButton" text="Translate">
       <font>
          <Font name="SansSerif Regular" size="13.0" />
       </font></Button>
+   <Label layoutX="20.0" layoutY="223.0" text="Enter text ...">
+      <font>
+         <Font name="SansSerif Regular" size="13.0" />
+      </font>
+   </Label>
+   <TextField fx:id="inputText" layoutX="20.0" layoutY="254.0" prefHeight="26.0" prefWidth="483.0">
+      <font>
+         <Font name="SansSerif Regular" size="13.0" />
+      </font>
+   </TextField>
+   <Button fx:id="btnTransText" layoutX="515.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#handleTransTextButton" text="Translate">
+      <font>
+         <Font name="SansSerif Regular" size="13.0" />
+      </font>
+   </Button>
+   <Label fx:id="lblThree" layoutX="33.0" layoutY="309.0" prefHeight="18.0" prefWidth="137.0" text="Your text translates to ...." visible="false" />
+   <Label fx:id="lblTextTranslation" layoutX="33.0" layoutY="348.0" />
 
 </AnchorPane>
