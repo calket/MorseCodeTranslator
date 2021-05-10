@@ -17,12 +17,7 @@
          <Font name="SansSerif Regular" size="13.0" />
       </font>
    </TextField>
-   <Label fx:id="lblTwo" layoutX="20.0" layoutY="127.0" text="Your morse translates to ...." visible="false">
-      <font>
-         <Font name="SansSerif Regular" size="13.0" />
-      </font>
-   </Label>
-   <Label fx:id="lblmorseTranslation" layoutX="20.0" layoutY="165.0">
+   <Label fx:id="lblmorseTranslation" layoutX="24.0" layoutY="310.0">
       <font>
          <Font name="SansSerif Regular" size="13.0" />
       </font>
@@ -31,27 +26,22 @@
       <font>
          <Font name="SansSerif Regular" size="13.0" />
       </font></Button>
-   <Label layoutX="20.0" layoutY="223.0" text="Enter text ...">
+   <Label layoutX="20.0" layoutY="113.0" text="or enter text ...">
       <font>
          <Font name="SansSerif Regular" size="13.0" />
       </font>
    </Label>
-   <TextField fx:id="inputText" layoutX="20.0" layoutY="254.0" prefHeight="26.0" prefWidth="483.0">
+   <TextField fx:id="inputText" layoutX="20.0" layoutY="144.0" prefHeight="26.0" prefWidth="483.0">
       <font>
          <Font name="SansSerif Regular" size="13.0" />
       </font>
    </TextField>
-   <Button fx:id="btnTransText" layoutX="515.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#handleTransTextButton" text="Translate">
+   <Button fx:id="btnTransText" layoutX="515.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#handleTransTextButton" text="Translate">
       <font>
          <Font name="SansSerif Regular" size="13.0" />
       </font>
    </Button>
-   <Label fx:id="lblThree" layoutX="33.0" layoutY="309.0" prefHeight="18.0" prefWidth="137.0" text="Your text translates to ...." visible="false">
-      <font>
-         <Font name="SansSerif Regular" size="13.0" />
-      </font>
-   </Label>
-   <Label fx:id="lblTextTranslation" layoutX="33.0" layoutY="348.0">
+   <Label fx:id="lblTwo" layoutX="24.0" layoutY="282.0" text="Translates to ..." visible="false">
       <font>
          <Font name="SansSerif Regular" size="13.0" />
       </font>

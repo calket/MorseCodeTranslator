@@ -4,8 +4,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.util.Locale;
+
 public class Controller {
-    public TextField input;
+    public TextField inputMorseCode;
+    public TextField inputText;
     public Label lblTwo;
     public Label lblmorseTranslation;
     private String spaceString = " ";
@@ -22,43 +25,60 @@ public class Controller {
     @FXML
     private void handleTransCodeButton(){
         decodedMorse = "";
-        String code = input.getText() + " ";
+        String code = inputMorseCode.getText() + " ";
         dissection(code);
     }
 
     public void handleTransTextButton() {
-
+        encodedText = "";
+        String text = inputText.getText().toLowerCase();
+        translateText(text);
+        System.out.println("XXX" +text);
     }
 
     private void dissection(String code) {
         String codeLetter = "";
-
         for( char c : code.toCharArray()){
             if( c != slash ){
                 if (c != space){
                     codeLetter = codeLetter+c;
                 }else{
-                    translateLetter(codeLetter);
+                    translateMorse(codeLetter);
                     codeLetter ="";
                 }
             }else {
-                decodedMorse = decodedMorse +" ";
+                decodedMorse += " ";
             }
         }
     }
+    private void translateText(String t) {
+        String s = null;
+        for (char c : t.toCharArray()){
+            if (c != space){
+                for (int i = 0; i < letters.length; i++) {
+                    if(c == letters[i]){
+                        encodedText += morseCode[i]+ " ";
+                    }
+                }
+            }else{
+                encodedText += " / ";
+            }
+        }
+        showTranslation(encodedText);
+    }
 
-    private void translateLetter(String codeLetter) {
+    private void translateMorse(String codeLetter) {
         for (int i = 0; i < letters.length; i++) {
             if( codeLetter.equals(morseCode[i])){
-                decodedMorse = decodedMorse + letters[i];
+                decodedMorse += letters[i];
             }
         }
-        showTranslation();
+        showTranslation(decodedMorse);
 
     }
 
-    private void showTranslation() {
-        lblmorseTranslation.setText(decodedMorse);
+    private void showTranslation(String translation) {
+        lblmorseTranslation.setText(translation);
         lblTwo.setVisible(true);
     }
 }
