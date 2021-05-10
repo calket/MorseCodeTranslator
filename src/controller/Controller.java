@@ -1,10 +1,13 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class Controller {
     public TextField input;
+    public Label lblTwo;
+    public Label lblmorseTranslation;
     private String spaceString = " ";
     private String slashString ="/";
     private char space = spaceString.charAt(0);
@@ -45,7 +48,13 @@ public class Controller {
                 decoded = decoded + letters[i];
             }
         }
-        System.out.println(decoded);
+        showTranslation();
+
+    }
+
+    private void showTranslation() {
+        lblmorseTranslation.setText(decoded);
+        lblTwo.setVisible(true);
     }
 
 }
