@@ -3,7 +3,6 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 public class Controller {
     public TextField input;
@@ -13,7 +12,8 @@ public class Controller {
     private String slashString ="/";
     private char space = spaceString.charAt(0);
     private char slash = slashString.charAt(0);
-    private String decoded = "";
+    private String decodedMorse = "";
+    private String encodedText ="";
 
     private static final char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     private static final String[] morseCode = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",
@@ -21,12 +21,13 @@ public class Controller {
 
     @FXML
     private void handleTransCodeButton(){
-        decoded = "";
+        decodedMorse = "";
         String code = input.getText() + " ";
         dissection(code);
     }
 
     public void handleTransTextButton() {
+
     }
 
     private void dissection(String code) {
@@ -41,7 +42,7 @@ public class Controller {
                     codeLetter ="";
                 }
             }else {
-                decoded = decoded+" ";
+                decodedMorse = decodedMorse +" ";
             }
         }
     }
@@ -49,7 +50,7 @@ public class Controller {
     private void translateLetter(String codeLetter) {
         for (int i = 0; i < letters.length; i++) {
             if( codeLetter.equals(morseCode[i])){
-                decoded = decoded + letters[i];
+                decodedMorse = decodedMorse + letters[i];
             }
         }
         showTranslation();
@@ -57,7 +58,7 @@ public class Controller {
     }
 
     private void showTranslation() {
-        lblmorseTranslation.setText(decoded);
+        lblmorseTranslation.setText(decodedMorse);
         lblTwo.setVisible(true);
     }
 }

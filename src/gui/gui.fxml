@@ -46,7 +46,15 @@
          <Font name="SansSerif Regular" size="13.0" />
       </font>
    </Button>
-   <Label fx:id="lblThree" layoutX="33.0" layoutY="309.0" prefHeight="18.0" prefWidth="137.0" text="Your text translates to ...." visible="false" />
-   <Label fx:id="lblTextTranslation" layoutX="33.0" layoutY="348.0" />
+   <Label fx:id="lblThree" layoutX="33.0" layoutY="309.0" prefHeight="18.0" prefWidth="137.0" text="Your text translates to ...." visible="false">
+      <font>
+         <Font name="SansSerif Regular" size="13.0" />
+      </font>
+   </Label>
+   <Label fx:id="lblTextTranslation" layoutX="33.0" layoutY="348.0">
+      <font>
+         <Font name="SansSerif Regular" size="13.0" />
+      </font>
+   </Label>
 
 </AnchorPane>
