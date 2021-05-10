@@ -27,7 +27,7 @@
          <Font name="SansSerif Regular" size="13.0" />
       </font>
    </Label>
-   <Button fx:id="btnTrans" layoutX="515.0" layoutY="54.0" mnemonicParsing="false" onMouseClicked="#handleTransButton" text="Translate">
+   <Button fx:id="btnTrans" layoutX="515.0" layoutY="52.0" mnemonicParsing="false" onMouseClicked="#handleTransButton" text="Translate">
       <font>
          <Font name="SansSerif Regular" size="13.0" />
       </font></Button>
