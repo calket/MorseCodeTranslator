@@ -33,7 +33,6 @@ public class Controller {
         encodedText = "";
         String text = inputText.getText().toLowerCase();
         translateText(text);
-        System.out.println("XXX" +text);
     }
 
     private void dissection(String code) {
