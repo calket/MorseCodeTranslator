@@ -1,2 +1,3 @@
 # MorseCodeDecoder WIP
-Decode morse code into words 
+Decode morse code into text /
+Encodetext into morse code
