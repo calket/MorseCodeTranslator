@@ -1,3 +1,3 @@
-# MorseCodeTranslator WIP
+# MorseCodeTranslator
 Decode morse code into text /
-Encodetext into morse code
+encode text into morse code using JavaFX and SceneBuilder
