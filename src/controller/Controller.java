@@ -1,8 +1,11 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 
 import java.util.Locale;
 
@@ -11,12 +14,14 @@ public class Controller {
     public TextField inputText;
     public Label lblTwo;
     public Label lblmorseTranslation;
+    public Button btnCopy;
     private String spaceString = " ";
     private String slashString ="/";
     private char space = spaceString.charAt(0);
     private char slash = slashString.charAt(0);
     private String decodedMorse = "";
     private String encodedText ="";
+    private String translation ="";
 
     private static final char[] letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
     private static final String[] morseCode = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",
@@ -33,6 +38,13 @@ public class Controller {
         encodedText = "";
         String text = inputText.getText().toLowerCase();
         translateText(text);
+    }
+
+    public void handleCopyButton() {
+        final Clipboard clipboard = Clipboard.getSystemClipboard();
+        final ClipboardContent content = new ClipboardContent();
+        content.putString(translation);
+        clipboard.setContent(content);
     }
 
     private void dissection(String code) {
@@ -63,6 +75,7 @@ public class Controller {
                 encodedText += " / ";
             }
         }
+        translation = encodedText;
         showTranslation(encodedText);
     }
 
@@ -72,12 +85,15 @@ public class Controller {
                 decodedMorse += letters[i];
             }
         }
+        translation = decodedMorse;
         showTranslation(decodedMorse);
 
     }
 
     private void showTranslation(String translation) {
+        btnCopy.setVisible(true);
         lblmorseTranslation.setText(translation);
         lblTwo.setVisible(true);
+
     }
 }
